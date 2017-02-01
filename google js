@@ -1,0 +1,21 @@
+// `exports.action` est exécuté quand le plugin est appelé via la reconnaissance vocale ou une requête HTTP
+exports.action = function(data, callback, config, SARAH){
+  // `config.modules.{plugin}` permet de récupérer les paramètres du plugin définis dans `{plugin}.prop`
+  var myConfig = config.modules.myplugin;
+
+  // si on utilise le fichier `{plugin}.prop` montré précédemment
+  // alors on peut récupérer la valeur de `user_setting1`
+  console.log("Value for user_setting1=", myConfig.user_setting1);
+
+  // on peut aussi connaitre les données envoyés via `{plugin}.xml`
+  // dans l'exemple précédent on avait `myParam` avec deux valeurs possibles "on" ou "off"
+  console.log("Value of myParam=", data.myParam);
+
+  // se référer à la partie JSDoc de cette page pour savoir quoi faire avec la variable SARAH
+  // par exemple, pour vocaliser une phrase:
+  SARAH.speak("Hello world!");
+
+  // il est *OBLIGATOIRE* de finir son code en appelant `callback({})`
+  // (optionnel) on peut passer un paramètre qui est le texte à vocaliser
+  callback({'tts' : 'text to speech'});
+}
