@@ -1,0 +1,10 @@
+{
+  "modules": {
+    "{google}": {
+      "description": "Ce plugin permet d'ouvrir une page google.",
+      "version": "1.0",
+      "user_setting1": "[e.g. indiquer ici une astuce pour l'utilisateur]",
+      "user_setting2": "[e.g. un indice sur quelle info il doit entrer ici]"
+    }
+  }
+}
